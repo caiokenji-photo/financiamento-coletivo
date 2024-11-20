@@ -1,24 +1,30 @@
 @media only screen and (max-width: 850px) {
     .title {
-        height: 6vh;
-        font-size: 3.5vh;
+        font-size: 3vh;
+        height: 4vh;
     }
     .text {
-        font-size: 1.9vh;
+        font-size: 1.5vh;
     }
     .littleday {
-        font-size: 1.5vh;   
+        font-size: 1.3vh;   
+    }
+    .insta {
+        font-size: 2vh;
     }
 }
 @media only screen and (min-width: 851px) {
     .title {
-        font-size: 8vh;
-        height: 18vh;
+        font-size: 5vh;
+        height: 9vh;
     }
     .text {
         font-size: 2.5vh;
     }
     .littleday {
+        font-size: 2vh;
+    }
+    .insta {
         font-size: 3vh;
     }
 }
@@ -102,10 +108,15 @@ grid-container {
 }
 
 
-a {
+.contribua {
     color: #ccffff;
     font-weight: bold;
     font-size: 5vh;
+}
+
+.insta {
+    color: #ccffff;
+    font-weight: bold;
 }
 
 .homebutton {
@@ -186,10 +197,11 @@ table th {
 
 #myBar {
     height: 3vh;
-    background-color: yellowgreen;
+    background-color: #42A5F5;
     font-family: sonoBold;
     text-align: center; 
     line-height: 3vh; 
+    color: white;
 }
 
 .littleday {
@@ -214,7 +226,7 @@ table th {
 }
 
 .goal {
-    grid-column: 3 / span 4;
+    grid-column: 1 / span 8;
 }
 
 .forms-table {
