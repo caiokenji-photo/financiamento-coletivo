@@ -46,7 +46,14 @@ function processRows(json) {
         const keys = Object.keys(row);
 
         keys.forEach((key) => {
-          console.log(total + " " + key+ " " + row[key])
+          if (key.includes("Contribuição")) {
+            numeric = Number(row[key])
+            if (row[key] != "" && row[key] != null && numeric != NaN){
+              console.log(total + " " + key+ " " + row[key])
+              total += numeric
+            }
+
+          }
         })
       })
       var meta = 20000
