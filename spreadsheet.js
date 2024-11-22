@@ -1,14 +1,15 @@
-const sheetId = '1RvSs9mEKyiIBi9JuAZlS5LJWjI9f2ThTe7ozMlFNUBk';
+
+const sheetId = '1_04NYnlOYqxBwyZSrisceKUt1FqBrCcJG7QyWXAuhLw';
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
-const sheetName = 'Financiamento - Legaliza o Abbey! (respostas)';
-const query = encodeURIComponent("Select B, E, F, G, H, I, J, K")
+const sheetName = 'Financiamento Coletivo - Caio Kenji (respostas)';
+const query = encodeURIComponent("Select B, C")
 const url = `${base}&sheet=${sheetName}&tq=${query}`
 
 const data = []
 document.addEventListener('DOMContentLoaded', init)
 const output = document.querySelector('.output')
 function init() {
-  console.log("INIT")
+  console.log("AFAF")
   fetch(url)
   .then(res => res.text())
   .then(rep => {
@@ -45,49 +46,23 @@ function processRows(json) {
         const keys = Object.keys(row);
 
         keys.forEach((key) => {
-          if (key.includes("Brinde 1") && row[key] != "" && row[key] != null) {
-            total = total + row[key] * 15.0
-            console.log(total + " " + row[key] + " " + key)
-          }
-          if (key.includes("Brinde 2") && row[key] != "" && row[key] != null) {
-            total = total + row[key] * 40.0
-            console.log(total + " " + row[key] + " " + key)
-          }
-          if (key.includes("Brinde 3") && row[key] != "" && row[key] != null) {
-            total += 80.0
-            console.log(total + " " + row[key] + " " + key)
-          }
-          if (key.includes("CLIENTE VIP") && row[key] != "" && row[key] != null) {
-            total += 300.0
-            console.log(total + " " + row[key] + " " + key)
-          }
-          if (key.includes("PATROCINADOR PRATA") && row[key] != "" && row[key] != null) {
-            total += 200.0
-            console.log(total + " " + row[key] + " " + key)
-          }
-          if (key.includes("PATROCINADOR OURO") && row[key] != "" && row[key] != null) {
-            total += 400
-            console.log(total + " " + row[key] + " " + key)
-          }
-          if (key.includes("DIREITO DE FESTA") && row[key] != "" && row[key] != null) {
-            total += 500
-            console.log(total + " " + row[key] + " " + key)
-          }
+          console.log(total + " " + key+ " " + row[key])
         })
       })
+      var meta = 20000
       var myBar = document.getElementById("myBar");
       var textGoal = document.getElementById("textGoal")
-      if (total <= 5000) {
+      if (total <= meta) {
         console.log("Ainda nao alcancou a meta " + total)
-        console.log("My bar width " + 100 * total / 5000 + "vw")
-        myBar.style.width = 100 * total / 5000 + "vw";
-        missingAmount = 5000-total
+        console.log("My bar width " + 100 * total / meta + "vw")
+        myBar.style.width = 100 * total / meta + "vw";
+        missingAmount = meta-total
         textGoal.innerHTML = "Faltam " + missingAmount + " reais para alcançar a meta!"
         console.log("Faltam " + missingAmount + " reais para alcançar a meta!")
       } else {
         myBar.style.width = "100vw";
         textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
       }
-      myBar.innerHTML = Math.round(100*total/5000) + "%"
-      console.log("myBar " + Math.round(100*total/5000) + "vw")
+      myBar.innerHTML = Math.round(100*total/meta) + "%"
+      console.log("myBar " + Math.round(100*total/meta) + "vw")
     }

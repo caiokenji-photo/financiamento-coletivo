@@ -105,9 +105,12 @@ grid-container {
     padding-left: 3vw;
     padding-right: 3vw;
     padding-bottom: 10vw;
-    overflow-y: scroll;
+    
 }
 
+#ptext {
+    overflow-y: scroll;
+}
 
 .contribua {
     color: #ccffff;
