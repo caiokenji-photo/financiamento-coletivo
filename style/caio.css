@@ -15,11 +15,11 @@
 }
 @media only screen and (min-width: 851px) {
     .title {
-        font-size: 5vh;
-        height: 9vh;
+        font-size:4vh;
+        height: 5vh;
     }
     .text {
-        font-size: 2.5vh;
+        font-size: 2vh;
     }
     .faltaX {
         font-size: 2vh;
@@ -40,6 +40,7 @@ body{
     object-fit: cover;
     position: fixed;
     display: grid;
+    overflow-y: scroll;
     text-align: center;
     grid-template-columns: 8;
     grid-template-rows: 40;
@@ -56,10 +57,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.homebg {
-    overflow-x: hidden;
-  }
 
 grid-container {
     margin: 0px;
@@ -80,7 +77,7 @@ grid-container {
     font-family: sonoBold;
     color: red;
     margin: 0px;
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 8;
     grid-row: 1 / span 1;
 }
 
@@ -91,22 +88,23 @@ grid-container {
     font-weight: bold;
     font-size: 4vh;
     margin: 0px;
-    grid-column: 3 / span 5;
-    grid-row: 3  / span 1;
+    grid-column: 1 / span 8;
+    grid-row: 2  / span 1;
 }
 
 .video {
-    grid-column: 8 / span 1;
-    grid-row: 1 / span 12;
+    grid-column: 1 / span 8;
+    grid-row: 3 / span 1;
 }
 
 .text {
     font-family: sonoLight;
     text-align: justify;
     color: white;
-    grid-column: 3 / span 5;
+    grid-column: 1 / span 8;
     grid-row: 4 / span 3;
-    background-color: rgb(32, 32, 167);
+    margin: 2vh;
+    background-color: rgba(12, 12, 12, 0.3);
 }
 
 .filler {
@@ -183,7 +181,7 @@ table th {
     line-height: 3vh; 
     color: white;
     grid-row: 23 / span 1;
-    grid-column: 1 / span 8;
+    grid-column: 2 / span 3;
 }
 
 .faltaX {
