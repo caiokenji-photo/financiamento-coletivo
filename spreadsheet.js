@@ -5,6 +5,10 @@ const sheetName = 'Financiamento Coletivo - Caio Kenji (respostas)';
 const query = encodeURIComponent("Select B, C")
 const url = `${base}&sheet=${sheetName}&tq=${query}`
 
+
+textFit(document.querySelector("text"));
+
+
 const data = []
 document.addEventListener('DOMContentLoaded', init)
 const output = document.querySelector('.output')
