@@ -46,13 +46,13 @@ body{
     padding: 0;
     height: 100%;
     background-color: darkblue;
+    overflow-y: scroll;
 }
 
 .home {
     object-fit: cover;
     position: fixed;
     display: grid;
-    overflow-y: scroll;
     text-align: center;
     grid-template-columns: 8;
     grid-template-rows: 40;
