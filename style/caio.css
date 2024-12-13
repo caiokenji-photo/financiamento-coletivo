@@ -109,7 +109,7 @@ grid-container {
 }
 
 .text {
-    font-family: sonoLight;
+    font-family: sonoBold;
     text-align: justify;
     color: white;
     grid-column: 1 / span 8;
@@ -134,6 +134,12 @@ grid-container {
 .insta {
     color: #ccffff;
     font-weight: bold;
+}
+
+.center {
+    text-align: center;
+    color: white;
+    font-family: sonoBold;
 }
 
 .formsbutton {
