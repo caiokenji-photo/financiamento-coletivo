@@ -1,7 +1,7 @@
 @media only screen and (max-width: 850px) {
     .title {
         font-size: 3vh;
-        height: 4vh;
+        height: 3vh;
     }
     .text {
         font-size: 1.5vh;
@@ -11,6 +11,12 @@
     }
     .insta {
         font-size: 2vh;
+    }
+    .caption {
+        font-size: 3vh;
+    }
+    .contribua{
+        font-size: 4vh;
     }
 }
 @media only screen and (min-width: 851px) {
@@ -26,6 +32,12 @@
     }
     .insta {
         font-size: 3vh;
+    }
+    .caption {
+        font-size: 4vh;
+    }
+    .contribua{
+        font-size: 5vh;
     }
 }
 
@@ -75,7 +87,7 @@ grid-container {
 
 .title {
     font-family: sonoBold;
-    color: red;
+    color: #ccffff;
     margin: 0px;
     grid-column: 1 / span 8;
     grid-row: 1 / span 1;
@@ -86,7 +98,6 @@ grid-container {
     color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 4vh;
     margin: 0px;
     grid-column: 1 / span 8;
     grid-row: 2  / span 1;
@@ -102,8 +113,8 @@ grid-container {
     text-align: justify;
     color: white;
     grid-column: 1 / span 8;
-    grid-row: 4 / span 3;
-    margin: 2vh;
+    grid-row: 5 / span 3;
+    margin: 1vh;
     background-color: rgba(12, 12, 12, 0.3);
 }
 
@@ -115,7 +126,9 @@ grid-container {
 .contribua {
     color: #ccffff;
     font-weight: bold;
-    font-size: 5vh;
+    font-family: sonoBold;
+    grid-column: 1 / span 8;
+    grid-row: 4 / span 1;
 }
 
 .insta {
@@ -175,13 +188,13 @@ table th {
     width: 100vw;
     background-color: lightgray;
     height: 3vh;
-    background-color: #42A5F5;
+    background-color: #69dafc;
     font-family: sonoBold;
     text-align: center; 
     line-height: 3vh; 
     color: white;
     grid-row: 23 / span 1;
-    grid-column: 2 / span 3;
+    grid-column: 1 / span 8;
 }
 
 .faltaX {
