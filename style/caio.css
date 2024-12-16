@@ -124,11 +124,15 @@ grid-container {
 }
 
 .contribua {
-    color: #ccffff;
+    color: darkblue;
     font-weight: bold;
     font-family: sonoBold;
     grid-column: 1 / span 8;
     grid-row: 4 / span 1;
+}
+
+.contrib {
+    color: darkblue;
 }
 
 .insta {
@@ -194,7 +198,7 @@ table th {
     width: 100vw;
     background-color: lightgray;
     height: 3vh;
-    background-color: #69dafc;
+    background-color: darkblue;
     font-family: sonoBold;
     text-align: center; 
     line-height: 3vh; 
