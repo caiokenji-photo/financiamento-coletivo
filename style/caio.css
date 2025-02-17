@@ -4,7 +4,7 @@
         height: 3vh;
     }
     .text {
-        font-size: 1.5vh;
+        font-size: 1vh;
     }
     .faltaX {
         font-size: 1.3vh;   
@@ -17,6 +17,9 @@
     }
     .contribua{
         font-size: 4vh;
+    }
+    .progressbar {
+        font-size: 2vh;
     }
 }
 @media only screen and (min-width: 851px) {
@@ -38,6 +41,9 @@
     }
     .contribua{
         font-size: 5vh;
+    }
+    .progressbar {
+        font-size: 4vh;
     }
 }
 
@@ -146,14 +152,6 @@ grid-container {
     font-family: sonoBold;
 }
 
-.formsbutton {
-    font-family: sonoBold;
-    text-align: center;
-    color: black;
-    grid-column: 1 / span 8;
-    grid-row: 33 / span 4;
-}
-
 .contribution {
     font-family: sonoBold;
     color: #ffcccc;
@@ -197,7 +195,8 @@ table th {
 .progressbar {
     width: 100vw;
     background-color: lightgray;
-    height: 3vh;
+    padding-top: 1vh;
+    height: 4vh;
     background-color: darkblue;
     font-family: sonoBold;
     text-align: center; 
@@ -219,6 +218,76 @@ table th {
     grid-column: 1 / span 8;
 }
 
-.brindes {
-    width: 100vw;
+#sorteados {
+    grid-column: 4 / span 2;
+    grid-row: 42 / span 1;
+    font-family: sonoBold;
+    color: teal;
+}
+
+.sortear {
+    grid-column: 4 / span 2;
+    grid-row: 40 / span 1;
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sonoBold;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.sortear:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.sortear,
+.sortear:focus {
+    user-select: auto;
+}
+
+.sortear:hover:not(:disabled) {
+    filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.sortear:disabled {
+    cursor: auto;
+}
+
+.sortear:active {
+    border-width: 4px 0 0;
+    background: none;
 }
