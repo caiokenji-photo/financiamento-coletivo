@@ -29,7 +29,7 @@ function init() {
             jsonData.table.rows.forEach((rowData) => {
                 colz.forEach((ele, ind) => {
                   if (rowData.c[ind] != null) {
-                    console.log(rowData.c[ind])
+                    console.log("Row " +rowData.c[ind].v)
                     console.log("Row " + ele)
                   }    
               })
@@ -74,7 +74,7 @@ function sortear() {
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
         colz.push(column);                  
-        console.log(column)
+        console.log("Column " + column)
       })
       console.log(colz)
     //Extrai dados das linhas
@@ -82,7 +82,7 @@ function sortear() {
         colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
               names.push(rowData.c[ind].v);
-              console.log(rowData.c[ind].v)
+              console.log("Rows" + rowData.c[ind].v)
            } 
           })
         })
