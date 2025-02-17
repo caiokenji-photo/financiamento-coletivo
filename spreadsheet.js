@@ -8,66 +8,50 @@ document.addEventListener('DOMContentLoaded', init)
 const output = document.querySelector('.output')
 function init() {
   console.log("INIT")
-  const query = encodeURIComponent("Select C, D")
+  const query = encodeURIComponent("Select D")
   const url = `${base}&sheet=${sheetName}&tq=${query}`
 
+  var total = 0.0;
+  var meta = 20000;
   fetch(url)
   .then(res => res.text())
   .then(rep => {
             //Apaga textos adicionais e extrai so o JSON:
             const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-            const colz = [];
-            const tr = document.createElement('tr');
+
             //Extrai nome das colunas
             jsonData.table.cols.forEach((heading) => {
               let column = heading.label;
-                colz.push(column);
-                  const th = document.createElement('th');
-                  // th.innerText = column;
-                  tr.appendChild(th);
+                console.log("Column " + column)
 
                 })
-            // output.appendChild(tr);
             //Extrai dados das linhas
             jsonData.table.rows.forEach((rowData) => {
-                const row = {};
                 colz.forEach((ele, ind) => {
-                    console.log(rowData.c)
-                    console.log(rowData.d)
-                    row[ele] = (rowData.c[ind] != null) ? rowData.c[ind].v : '';
-                  })
-                data.push(row);
+                  if (rowData.c[ind] != null) {
+                    console.log(rowData.c[ind])
+                    console.log("Row " + ele)
+                  }    
               })
-              processRows(data);
+              })
+              var myBar = document.getElementById("myBar");
+              var textGoal = document.getElementById("textGoal")
+        
+              if (total <= meta) {
+                console.log("Ainda nao alcancou a meta " + total)
+                console.log("My bar width " + 100 * total / meta + "vw")
+                myBar.style.width = 100 * total / meta + "vw";
+                missingAmount = meta-total
+                textGoal.innerHTML = "Faltam " + missingAmount + " reais para alcançar a meta!"
+                console.log("Faltam " + missingAmount + " reais para alcançar a meta!")
+              } else {
+                myBar.style.width = "100vw";
+                textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
+              }
+              myBar.innerHTML = Math.round(100*total/meta) + "%"
             })
 }
 
-function processRows(json) {
-  var total = 0.0
-  json.forEach((row) => {
-    const tr = document.createElement('tr');
-        const keys = Object.keys(row);
-        keys.forEach((key) => {
-            console.log(total + " " + row[key] + " " + key)
-         })
-      })
-      var myBar = document.getElementById("myBar");
-      var textGoal = document.getElementById("textGoal")
-
-      if (total <= 20000) {
-        console.log("Ainda nao alcancou a meta " + total)
-        console.log("My bar width " + 100 * total / 20000 + "vw")
-        myBar.style.width = 100 * total / 20000 + "vw";
-        missingAmount = 20000-total
-        textGoal.innerHTML = "Faltam " + missingAmount + " reais para alcançar a meta!"
-        console.log("Faltam " + missingAmount + " reais para alcançar a meta!")
-      } else {
-        myBar.style.width = "100vw";
-        textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
-      }
-      myBar.innerHTML = Math.round(100*total/20000) + "%"
-      console.log("myBar " + Math.round(100*total/20000) + "vw")
-    }
 
 function sortear() {
   var sorteados = document.getElementById("sorteados")
