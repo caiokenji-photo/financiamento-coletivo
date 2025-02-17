@@ -32,7 +32,10 @@ function init() {
             console.log("Row " + rowData.c[ind].v)
             var floatContrib = parseFloat(rowData.c[ind].v)
             if (floatContrib != NaN) {
+              console.log("é numero " + total)
               total += floatContrib
+            } else {
+              console.log(rowData.c[ind].v + " nao é float")
             }
           }    
       })
