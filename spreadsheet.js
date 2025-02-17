@@ -91,22 +91,18 @@ function sortear() {
       let column = heading.label;
         colz.push(column);                  
         console.log(column)
-        })
+      })
+      console.log(colz)
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
-        const row = {};
         colz.forEach((ele, ind) => {
-            row[ele] = (rowData.c[ind] != null) ? rowData.c[ind].v : '';
-            console.log(row[ele])
-            names.push(row[ele])
+            if (rowData.c[ind] != null) {
+              names.push(rowData.c[ind].v);
+              console.log(rowData.c[ind].v)
+           } 
           })
         })
       })
-      var index = Math.random()*names.length
-      console.log(names.length)
-      console.log(index)
-      console.log(Math.floor(index))
-      console.log(names)
       sorteados.innerHTML += names[Math.floor(Math.random()*names.length)]
     }
     
