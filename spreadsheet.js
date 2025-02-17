@@ -16,40 +16,40 @@ function init() {
   fetch(url)
   .then(res => res.text())
   .then(rep => {
-            //Apaga textos adicionais e extrai so o JSON:
-            const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-            var colz = []
-            //Extrai nome das colunas
-            jsonData.table.cols.forEach((heading) => {
-              let column = heading.label;
-              colz.push(column)
-              console.log("Column " + column)
-                })
-            //Extrai dados das linhas
-            jsonData.table.rows.forEach((rowData) => {
-                colz.forEach((ele, ind) => {
-                  if (rowData.c[ind] != null) {
-                    console.log("Row " +rowData.c[ind].v)
-                    console.log("Row " + ele)
-                  }    
-              })
-              })
-              var myBar = document.getElementById("myBar");
-              var textGoal = document.getElementById("textGoal")
-        
-              if (total <= meta) {
-                console.log("Ainda nao alcancou a meta " + total)
-                console.log("My bar width " + 100 * total / meta + "vw")
-                myBar.style.width = 100 * total / meta + "vw";
-                missingAmount = meta-total
-                textGoal.innerHTML = "Faltam " + missingAmount + " reais para alcançar a meta!"
-                console.log("Faltam " + missingAmount + " reais para alcançar a meta!")
-              } else {
-                myBar.style.width = "100vw";
-                textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
-              }
-              myBar.innerHTML = Math.round(100*total/meta) + "%"
-            })
+    //Apaga textos adicionais e extrai so o JSON:
+    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+    var colz = []
+    //Extrai nome das colunas
+    jsonData.table.cols.forEach((heading) => {
+      let column = heading.label;
+      colz.push(column)
+      console.log("Column " + column)
+        })
+    //Extrai dados das linhas
+    jsonData.table.rows.forEach((rowData) => {
+        colz.forEach((ele, ind) => {
+          if (rowData.c[ind] != null) {
+            console.log("Row " +rowData.c[ind].v)
+            console.log("Row " + ele)
+          }    
+      })
+      })
+      var myBar = document.getElementById("myBar");
+      var textGoal = document.getElementById("textGoal")
+
+      if (total <= meta) {
+        console.log("Ainda nao alcancou a meta " + total)
+        console.log("My bar width " + 100 * total / meta + "vw")
+        myBar.style.width = 100 * total / meta + "vw";
+        missingAmount = meta-total
+        textGoal.innerHTML = "Faltam " + missingAmount + " reais para alcançar a meta!"
+        console.log("Faltam " + missingAmount + " reais para alcançar a meta!")
+      } else {
+        myBar.style.width = "100vw";
+        textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
+      }
+      myBar.innerHTML = Math.round(100*total/meta) + "%"
+    })
 }
 
 
@@ -69,14 +69,12 @@ function sortear() {
     //Apaga textos adicionais e extrai so o JSON:
     const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
     const colz = [];
-
     //Extrai nome das colunas
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
         colz.push(column);                  
         console.log("Column " + column)
       })
-      console.log(colz)
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
         colz.forEach((ele, ind) => {
