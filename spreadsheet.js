@@ -103,7 +103,7 @@ function sortear() {
         })
       })
       
-      sorteados.innerHTML += names[Math.floor(Math.random()*names.length())]
+      sorteados.innerHTML += names[Math.floor(Math.random()*names.length)]
     }
     
 
