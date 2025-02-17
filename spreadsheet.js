@@ -29,8 +29,11 @@ function init() {
     jsonData.table.rows.forEach((rowData) => {
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
-            console.log("Row " +rowData.c[ind].v)
-            console.log("Row " + ele)
+            console.log("Row " + rowData.c[ind].v)
+            var floatContrib = parseFloat(rowData.c[ind].v)
+            if (floatContrib != NaN) {
+              total += floatContrib
+            }
           }    
       })
       })
