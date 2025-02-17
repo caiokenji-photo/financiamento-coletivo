@@ -79,7 +79,6 @@ function sortear() {
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
         colz.push(column);                  
-        console.log("Column " + column)
       })
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
@@ -91,6 +90,10 @@ function sortear() {
           })
         })
       })
+      var rand = Math.random()
+      console.log(rand)
+      console.log(names.length)
+      console.log(Math.floor(rand*names.length))
       sorteados.innerHTML += names[Math.floor(Math.random()*names.length)]
     }
     
