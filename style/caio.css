@@ -168,13 +168,13 @@ table td, table th {
     padding: 0px;
 }
 
-table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even){background-color: darkblue;}
 table tr:hover {background-color: yellowgreen;}
 
 table th {
     text-align: left;
     background-color: transparent;
-    color: black;
+    color: white;
 }
 
 

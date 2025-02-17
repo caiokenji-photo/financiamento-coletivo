@@ -2,14 +2,15 @@
 const sheetId = '13qmZWONxRXJl46-nPH7tZnRU946xJIVhg7cHGsTQfiA';
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
 const sheetName = 'Financiamento Coletivo - Caio Kenji (respostas)';
-const query = encodeURIComponent("Select C, D")
-const url = `${base}&sheet=${sheetName}&tq=${query}`
 
 const data = []
 document.addEventListener('DOMContentLoaded', init)
 const output = document.querySelector('.output')
 function init() {
   console.log("INIT")
+  const query = encodeURIComponent("Select C, D")
+  const url = `${base}&sheet=${sheetName}&tq=${query}`
+
   fetch(url)
   .then(res => res.text())
   .then(rep => {
@@ -69,13 +70,14 @@ function processRows(json) {
     }
 
 function sortear() {
-  console.log("Sortear!!!" + url)
-
-  console.log(getOS())
   var sorteados = document.getElementById("sorteados")
   sorteados.innerHTML += getOS()
   
   var names = [];
+  const query = encodeURIComponent("Select C")
+  const url = `${base}&sheet=${sheetName}&tq=${query}`
+  console.log("Sortear!!!" + url)
+
   fetch(url)
   .then(res => res.text())
   .then(rep => {
@@ -96,15 +98,14 @@ function sortear() {
         colz.forEach((ele, ind) => {
             row[ele] = (rowData.c[ind] != null) ? rowData.c[ind].v : '';
             console.log(row[ele])
-            sorteados.innerHTML += row[ele]
+            names.push(row[ele])
           })
-        data.push(row);
+        })
       })
-      names.push(data)
-    })
-
-}
-
+      
+      sorteados.innerHTML += names[Math.floor(Math.random()*names.length())]
+    }
+    
 
 
 
