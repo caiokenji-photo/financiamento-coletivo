@@ -18,12 +18,12 @@ function init() {
   .then(rep => {
             //Apaga textos adicionais e extrai so o JSON:
             const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-
+            var colz = []
             //Extrai nome das colunas
             jsonData.table.cols.forEach((heading) => {
               let column = heading.label;
-                console.log("Column " + column)
-
+              colz.push(column)
+              console.log("Column " + column)
                 })
             //Extrai dados das linhas
             jsonData.table.rows.forEach((rowData) => {
