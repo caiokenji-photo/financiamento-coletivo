@@ -102,7 +102,8 @@ function sortear() {
           })
         })
       })
-      
+      console.log(Math.floor(Math.random()*names.length))
+      console.log(names)
       sorteados.innerHTML += names[Math.floor(Math.random()*names.length)]
     }
     
