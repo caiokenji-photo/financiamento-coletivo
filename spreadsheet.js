@@ -83,22 +83,18 @@ function sortear() {
     })
     let rand = Math.random()
     let len = names.length * 1.0
-    console.log(rand)
-    console.log(len)
-    console.log(Math.floor(rand*len))
-    console.log(names)
     sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
     var params = {
-      "range":"Sheet1!A1:B1",
+      "range":"Sorteio!A1:B1",
       "majorDimension": "ROWS",
       "values": [
-      ["Hello","World"]
+      [names[Math.floor(rand*len)]]
     ],
   }
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', 'https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1!A1:B1?valueInputOption=USER_ENTERED');
+    xhr.open('PUT', 'https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sorteio!A1:B1?valueInputOption=USER_ENTERED');
     // xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
-    // xhr.send(JSON.stringify(params));    
+    xhr.send(JSON.stringify(params));    
 
 
   })
