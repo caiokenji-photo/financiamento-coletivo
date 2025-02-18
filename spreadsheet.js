@@ -85,7 +85,7 @@ function sortear() {
     let len = names.length * 1.0
     sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
     var params = {
-      "range":"Sorteio!A1:B1",
+      "range":"Sorteio!A1",
       "majorDimension": "ROWS",
       "values": [
       [names[Math.floor(rand*len)]]
