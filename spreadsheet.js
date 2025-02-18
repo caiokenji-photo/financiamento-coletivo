@@ -23,20 +23,16 @@ function init() {
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
       colz.push(column)
-      console.log("Column " + column)
-        })
+    })
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
-            console.log("Row " + rowData.c[ind].v)
             var floatContrib = parseFloat(rowData.c[ind].v)
             if (floatContrib != NaN) {
-              console.log("é numero " + total)
+              console.log(total + " contribuicao " + floatContrib)
               total += floatContrib
-            } else {
-              console.log(rowData.c[ind].v + " nao é float")
-            }
+            } 
           }    
       })
       })
@@ -44,12 +40,9 @@ function init() {
       var textGoal = document.getElementById("textGoal")
 
       if (total <= meta) {
-        console.log("Ainda nao alcancou a meta " + total)
-        console.log("My bar width " + 100 * total / meta + "vw")
         myBar.style.width = 100 * total / meta + "vw";
         missingAmount = meta-total
         textGoal.innerHTML = "Faltam " + missingAmount + " reais para alcançar a meta!"
-        console.log("Faltam " + missingAmount + " reais para alcançar a meta!")
       } else {
         myBar.style.width = "100vw";
         textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
@@ -85,16 +78,18 @@ function sortear() {
         colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
               names.push(rowData.c[ind].v);
-              console.log("Rows" + rowData.c[ind].v)
+              console.log("Rows " + rowData.c[ind].v)
            } 
           })
         })
       })
-      var rand = Math.random()
+      let rand = Math.random()
+      let len = names.length * 1.0
       console.log(rand)
-      console.log(names.length)
-      console.log(Math.floor(rand*names.length))
-      sorteados.innerHTML += names[Math.floor(Math.random()*names.length)]
+      console.log(len)
+      console.log(Math.floor(rand*len))
+      console.log(names[Math.floor(rand*len)])
+      sorteados.innerHTML += names[Math.floor(rand*len)]
     }
     
 
