@@ -56,7 +56,7 @@ function sortear() {
   var sorteados = document.getElementById("sorteados")
   sorteados.innerHTML += getOS()
   
-  var names = [];
+  let names = [];
   const query = encodeURIComponent("Select C")
   const url = `${base}&sheet=${sheetName}&tq=${query}`
   console.log("Sortear!!!" + url)
@@ -80,17 +80,17 @@ function sortear() {
               names.push(rowData.c[ind].v);
               console.log("Names " + rowData.c[ind].v)
            } 
-          })
         })
-      })
-      let rand = Math.random()
-      let len = names.length * 1.0
-      console.log(rand)
-      console.log(len)
-      console.log(Math.floor(rand*len))
-      console.log(names)
-      sorteados.innerHTML += names[Math.floor(rand*len)]
-    }
+    })
+    let rand = Math.random()
+    let len = names.length * 1.0
+    console.log(rand)
+    console.log(len)
+    console.log(Math.floor(rand*len))
+    console.log(names)
+    sorteados.innerHTML += names[Math.floor(rand*len)]
+  })
+}
     
 
 
