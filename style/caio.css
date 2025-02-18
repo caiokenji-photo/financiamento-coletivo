@@ -194,7 +194,6 @@ table th {
 
 #myProgress {
     width: 100vw;
-    padding-top: 1vh;
     height: 4vh;
     background-color: darkblue;
     font-family: sonoBold;
@@ -206,9 +205,9 @@ table th {
 }
 
 #myBar {
-    height: 3vh;
+    height: 4vh;
     background-color: yellowgreen;
-    font-family: basteleurBold;
+    font-family: sonoBold;
     text-align: center; 
     line-height: 3vh; 
 }
