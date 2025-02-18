@@ -78,7 +78,7 @@ function sortear() {
         colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
               names.push(rowData.c[ind].v);
-              console.log("Rows " + rowData.c[ind].v)
+              console.log("Names " + rowData.c[ind].v)
            } 
           })
         })
@@ -88,7 +88,7 @@ function sortear() {
       console.log(rand)
       console.log(len)
       console.log(Math.floor(rand*len))
-      console.log(names[Math.floor(rand*len)])
+      console.log(names)
       sorteados.innerHTML += names[Math.floor(rand*len)]
     }
     
