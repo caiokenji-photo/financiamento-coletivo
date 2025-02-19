@@ -92,7 +92,7 @@ function sortear() {
     ],
   }
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', 'https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sorteio!A1:B1?valueInputOption=USER_ENTERED');
+    xhr.open('PUT', 'https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sorteio!A1');
     // xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
     xhr.send(JSON.stringify(params));    
 
