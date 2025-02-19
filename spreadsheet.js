@@ -94,9 +94,21 @@ function sortear() {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sorteio!A1');
     // xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+    xhr.onload = function (e) {
+      if (e) {
+        console.log(e);
+      }
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          console.log(xhr.responseText.toString());
+        } else {
+          console.log(xhr.status);
+        }
+      } else {
+        console.log(xhr.status)
+      }
+    }
     xhr.send(JSON.stringify(params));    
-
-
   })
 }
     
