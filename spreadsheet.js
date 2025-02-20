@@ -84,31 +84,18 @@ function sortear() {
     let rand = Math.random()
     let len = names.length * 1.0
     sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
-    var params = {
-      "range":"Sorteio!A1",
-      "majorDimension": "ROWS",
-      "values": [
-      [names[Math.floor(rand*len)]]
-    ],
-  }
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sorteio!A1');
-    // xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
-    xhr.onload = function (e) {
-      if (e) {
-        console.log(e);
-      }
-      if (xhr.readyState == 4) {
-        if (xhr.status == 200) {
-          console.log(xhr.responseText.toString());
-        } else {
-          console.log(xhr.status);
-        }
-      } else {
-        console.log(xhr.status)
-      }
-    }
-    xhr.send(JSON.stringify(params));    
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username: "rifacaiokenji@gmail.com",
+      Password: "PRh6E&cYp\"AN}]'",
+      To: 'luisa.burini@gmail.com',
+      From: "rifacaiokenji@gmail.com",
+      Subject: "SORTEIO",
+      Body: "Sorteado: " + names[Math.floor(rand*len)],
+  })
+      .then(function (message) {
+          alert("mail sent successfully")
+      });  
   })
 }
     
