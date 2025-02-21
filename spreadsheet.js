@@ -85,16 +85,11 @@ function sortear() {
     let len = names.length * 1.0
     sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
 
-    var mailto = "mailto:luisa.burini@gmail.com?subject=Mailtrap%20is%20awesome&body=Hey%0D%0A%0D%0AJust%20wanted%20to%20let%20you%20know%20your%20service%20rocks!%0D%0A%0D%0ACheers,%0D%0ASatisfied%20user%20%3A%29"
-    fetch(mailto)
-    .then(res => res.text())
-    .then(rep)
-
     Email.send({
       Host: "smtp.mailslurp.com",
       Username: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
-      Password: "RJ6ShiUVXCbei0oGRZjPe2w6i9fgSR1e",
-      To: 'luisa.burini@gmail.com',
+      Password: "mDs4nWmNCMcYVgUK3RNUxYUlKwTTfOzH",
+      To: 'e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz',
       From: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
       Subject: "SORTEIO",
       Body: "Sorteado: " + names[Math.floor(rand*len)],
