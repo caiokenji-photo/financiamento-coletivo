@@ -225,7 +225,7 @@ table th {
 }
 
 #sorteados {
-    grid-column: 4 / span 2;
+    grid-column: 1 / span 8;
     grid-row: 49 / span 1;
     font-family: sonoBold;
     color: teal;
