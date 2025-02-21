@@ -84,20 +84,6 @@ function sortear() {
     let rand = Math.random()
     let len = names.length * 1.0
     sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
-
-    Email.send({
-      Host: "smtp.mailslurp.com",
-      Username: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
-      Password: "mDs4nWmNCMcYVgUK3RNUxYUlKwTTfOzH",
-      To: 'e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz',
-      From: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
-      Subject: "SORTEIO",
-      Body: "Sorteado: " + names[Math.floor(rand*len)] + " " + Date.now(),
-  })
-      .then(function (message) {
-          alert("mail sent successfully " + message)
-      });  
-  })
 }
     
 
