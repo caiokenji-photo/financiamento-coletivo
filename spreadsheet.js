@@ -91,11 +91,11 @@ function sortear() {
     .then(rep)
 
     Email.send({
-      Host: "smtp.gmail.com",
-      Username: "rifacaiokenji@gmail.com",
-      Password: "PRh6E&cYp\"AN}]'",
+      Host: "smtp.mailslurp.com",
+      Username: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
+      Password: "RJ6ShiUVXCbei0oGRZjPe2w6i9fgSR1e",
       To: 'luisa.burini@gmail.com',
-      From: "rifacaiokenji@gmail.com",
+      From: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
       Subject: "SORTEIO",
       Body: "Sorteado: " + names[Math.floor(rand*len)],
   })
