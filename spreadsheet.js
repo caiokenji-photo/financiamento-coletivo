@@ -53,8 +53,10 @@ function init() {
     })
 
     var s = localStorage.getItem("sorteados")
-    var sorteados = document.getElementById("sorteados")
-    sorteados.innerHTML += " " + s
+    if (s != null) {
+      var sorteados = document.getElementById("sorteados")
+      sorteados.innerHTML += " " + s
+    }
 }
 
 
