@@ -6,6 +6,8 @@ const sheetName = 'Financiamento Coletivo - Caio Kenji (respostas)';
 const data = []
 document.addEventListener('DOMContentLoaded', init)
 const output = document.querySelector('.output')
+
+
 function init() {
   console.log("INIT")
   const query = encodeURIComponent("Select D")
@@ -49,6 +51,10 @@ function init() {
       }
       myBar.innerHTML = Math.round(100*total/meta) + "%"
     })
+
+    var s = localStorage.getItem("sorteados")
+    var sorteados = document.getElementById("sorteados")
+    sorteados.innerHTML += " " + s
 }
 
 
@@ -84,20 +90,7 @@ function sortear() {
     let rand = Math.random()
     let len = names.length * 1.0
     sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
-
-    enc = "AGU2OTBiMmIxLTk3ZTYtNGMzMi05NmU0LTMzYWRjNDc2ZWY3NkBtYWlsc2x1cnAuYml6AFJKNlNoaVVWWENiZWkwb0dSWmpQZTJ3Nmk5ZmdTUjFl"
-    Email.send({
-      Host: "smtp.mailslurp.com",
-      Username: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
-      Password: "mDs4nWmNCMcYVgUK3RNUxYUlKwTTfOzH",
-      To: 'e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz',
-      From: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
-      Subject: "SORTEIO",
-      Body: "Sorteado: " + names[Math.floor(rand*len)] + " " + Date.now() + " " + getOS,
-  })
-      .then(function (message) {
-          alert("mail sent successfully " + message)
-      });  
+    localStorage.setItem("sorteados", sorteados.innerHTML)
   })
 }
     
