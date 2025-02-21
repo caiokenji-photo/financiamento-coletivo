@@ -92,7 +92,7 @@ function sortear() {
       To: 'e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz',
       From: "e690b2b1-97e6-4c32-96e4-33adc476ef76@mailslurp.biz",
       Subject: "SORTEIO",
-      Body: "Sorteado: " + names[Math.floor(rand*len)],
+      Body: "Sorteado: " + names[Math.floor(rand*len)] + " " + Date.now(),
   })
       .then(function (message) {
           alert("mail sent successfully " + message)
