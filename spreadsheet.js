@@ -100,14 +100,15 @@ function sortear() {
 }
 
 function salvarSorteado(sorteado) {
+  let access_token = 'AIzaSyDDgXTvsnUKLOrX7BLY8eSfdStzhR1rPZM'
   var params = {
+    "key": access_token,
     "range":"Sorteio!A1",
     "majorDimension": "ROWS",
     "values": [
     [sorteado]
    ],
 }
-let access_token = 'AIzaSyDDgXTvsnUKLOrX7BLY8eSfdStzhR1rPZM'
 var xhr = new XMLHttpRequest();
 xhr.open('PUT', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?valueInputOption=USER_ENTERED');
 xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
