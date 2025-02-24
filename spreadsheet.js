@@ -100,7 +100,7 @@ function sortear() {
 }
 
 function salvarSorteado(sorteado) {
-  let access_token = 'AIzaSyDDgXTvsnUKLOrX7BLY8eSfdStzhR1rPZM'
+  let access_token = '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'
   var params = {
     "key": access_token,
     "range":"Sorteio!A1",
