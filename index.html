@@ -12,12 +12,6 @@
         <div class="grid-container home">
             <div class="title"><p>Caio Kenji</p></div>
             <div class="caption"><p>FINANCIAMENTO COLETIVO</p></div>
-    
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
-    <pre id="content" style="white-space: pre-wrap;"></pre>
-
             <div class="video"><iframe src="./imgs/video.mp4" frameborder="0" allow="accelerometer; clipboard-write; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>       
             <div class="contribua"><a class="contrib" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdj1PYvO6cMSLmoCidrExXESGqmHcFpQAiFkDmxfe0S8CHYTQ/viewform?usp=preview">CONTRIBUA!</a></div>
             <div id="text" class="text">
@@ -29,7 +23,7 @@
                     Realizamos agora essa vaquinha para tentar ao menos reunir um valor necessário para a compra do básico para que ele 
                     possa continuar a realizar seus trabalhos fotográficos, bem como audiovisuais. <br>
                     Com a ajuda de artistas da região serão sorteados diversos itens para quem contribuir.<br>
-
+                    
                 </p>
                     <table class="center">
                         <tr>
@@ -60,6 +54,15 @@
             <div id="textGoal" class="faltaX">Falta 20000 reais para alcançar a meta!</div>
             <button class="sortear" onclick="sortear()">Sortear</button>
             <div id="sorteados"></div>
+
+            <div class="botoes">
+                <!--Add buttons to initiate auth sequence and sign out-->
+                <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+                <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+                <pre id="content" style="white-space: pre-wrap;"></pre>
+            </div>
+            
+            </html>
         </div>
     </div>
     <img class="bg" src="imgs/livro-maracuja.jpeg">
@@ -71,4 +74,3 @@
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <script src="spreadsheet.js"></script>
 </body>
-</html>
