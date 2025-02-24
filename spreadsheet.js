@@ -91,9 +91,28 @@ function sortear() {
     })
     let rand = Math.random()
     let len = names.length * 1.0
-    sorteados.innerHTML += names[Math.floor(rand*len)]+"\n"
+    let indice_sorteado = Math.floor(rand*len)
+    let sorteado = names[indice_sorteado]
+    sorteados.innerHTML += sorteado+"\n"
     localStorage.setItem("sorteados", sorteados.innerHTML)
+    salvarSorteado(sorteado)
   })
+}
+
+function salvarSorteado(sorteado) {
+  var params = {
+    "range":"Sorteio!A1",
+    "majorDimension": "ROWS",
+    "values": [
+    [sorteado]
+   ],
+}
+let access_token = 'AIzaSyDDgXTvsnUKLOrX7BLY8eSfdStzhR1rPZM'
+var xhr = new XMLHttpRequest();
+xhr.open('PUT', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?valueInputOption=USER_ENTERED');
+xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+xhr.send(JSON.stringify(params));
+
 }
     
 
