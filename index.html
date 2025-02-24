@@ -12,6 +12,12 @@
         <div class="grid-container home">
             <div class="title"><p>Caio Kenji</p></div>
             <div class="caption"><p>FINANCIAMENTO COLETIVO</p></div>
+    
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
             <div class="video"><iframe src="./imgs/video.mp4" frameborder="0" allow="accelerometer; clipboard-write; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>       
             <div class="contribua"><a class="contrib" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdj1PYvO6cMSLmoCidrExXESGqmHcFpQAiFkDmxfe0S8CHYTQ/viewform?usp=preview">CONTRIBUA!</a></div>
             <div id="text" class="text">
@@ -61,6 +67,8 @@
     <img class="bg" src="imgs/camiseta.jpeg">
     <img class="bg" src="imgs/ceramica.jpeg">
     <img class="bg" src="imgs/ceramica_porta_lapis.jpeg">
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <script src="spreadsheet.js"></script>
 </body>
 </html>
