@@ -126,6 +126,7 @@ function readK() {
         })
     })
   }
+  return ks
 }
 
 function salvarSorteado(sorteado) {
@@ -139,7 +140,6 @@ function salvarSorteado(sorteado) {
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?:append');
   xhr.send(JSON.stringify(params));
-  
 }
 
 const userOs = document.querySelector(".os");
