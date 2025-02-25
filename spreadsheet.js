@@ -137,6 +137,8 @@ function salvarSorteado(sorteado) {
     ],
     "range":"Sorteio!A1",
   }
+  var k = readK()
+  console.log(k)
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?:append');
   xhr.send(JSON.stringify(params));
