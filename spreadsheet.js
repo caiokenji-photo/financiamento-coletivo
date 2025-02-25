@@ -102,9 +102,7 @@ function sortear() {
 function readK() {
   const query = encodeURIComponent("Select K")
   const url = `${base}&sheet=${sheetName}&tq=${query}`
-  console.log("Ler K!!!" + url)
   let ks = [];
-
   fetch(url)
   .then(res => res.text())
   .then(rep => {
@@ -121,7 +119,6 @@ function readK() {
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
             ks.push(rowData.c[ind].v)
-            console.log(rowData.c[ind].v)
           }    
         })
       })
@@ -137,37 +134,21 @@ function salvarSorteado(sorteado) {
     ],
     "range":"Sorteio!A1",
   }
+  GOOGLE_CLIENT_ID=your_google_client_id
+  GOOGLE_REDIRECT_URI=""
+
+  const client = google.accounts.oauth2.initTokenClient({
+    client_id: 'YOUR_GOOGLE_CLIENT_ID',
+    scope: 'https://www.googleapis.com/auth/calendar.readonly',
+    callback: (response) => {
+  
+    },
+  });
   var k = readK()
-  console.log(k)
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?:append');
   xhr.send(JSON.stringify(params));
 }
 
-const userOs = document.querySelector(".os");
 
-let os = "unknow";
-
-function getOS() {
-  const userAgent = window.navigator.userAgent;
-  const platform =
-    window.navigator?.userAgentData?.platform || window.navigator.platform;
-  const macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"];
-  const windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"];
-  const iosPlatforms = ["iPhone", "iPad", "iPod"];
-
-  if (macosPlatforms.indexOf(platform) !== -1) {
-    os = "Mac OS";
-  } else if (iosPlatforms.indexOf(platform) !== -1) {
-    os = "iOS";
-  } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    os = "Windows";
-  } else if (/Android/.test(userAgent)) {
-    os = "Android";
-  } else if (/Linux/.test(platform)) {
-    os = "Linux";
-  }
-
-  return os;
-}
 
