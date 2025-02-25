@@ -104,29 +104,29 @@ function readK() {
   const url = `${base}&sheet=${sheetName}&tq=${query}`
   console.log("Ler K!!!" + url)
   let ks = [];
+
   fetch(url)
   .then(res => res.text())
   .then(rep => {
-    console.log(rep)
     //Apaga textos adicionais e extrai so o JSON:
     const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-    const colz = [];
+    var colz = []
     //Extrai nome das colunas
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
-        colz.push(column);                  
-      })
+      colz.push(column)
+    })
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
         colz.forEach((ele, ind) => {
-            if (rowData.c[ind] != null) {
-              ks.push(rowData.c[ind].v);
-              console.log("ks " + rowData.c[ind].v + " " + ele)
-           } 
+          if (rowData.c[ind] != null) {
+            ks.push(rowData.c[ind].v)
+            console.log(rowData.c[ind].v)
+          }    
         })
+      })
     })
-  }
-  return ks
+  return ks;
 }
 
 function salvarSorteado(sorteado) {
