@@ -99,55 +99,34 @@ function sortear() {
   })
 }
 
-function readK() {
-  const query = encodeURIComponent("Select K")
-  const url = `${base}&sheet=${sheetName}&tq=${query}`
-  let ks = [];
-  fetch(url)
-  .then(res => res.text())
-  .then(rep => {
-    //Apaga textos adicionais e extrai so o JSON:
-    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-    var colz = []
-    //Extrai nome das colunas
-    jsonData.table.cols.forEach((heading) => {
-      let column = heading.label;
-      colz.push(column)
-    })
-    //Extrai dados das linhas
-    jsonData.table.rows.forEach((rowData) => {
-        colz.forEach((ele, ind) => {
-          if (rowData.c[ind] != null) {
-            ks.push(rowData.c[ind].v)
-          }    
-        })
-      })
-    })
-  return ks;
-}
+
 
 function salvarSorteado(sorteado) {
-  var params = {
-    "majorDimension": "ROWS",
-    "values": [
-      [sorteado]
-    ],
-    "range":"Sorteio!A1",
-  }
-  GOOGLE_CLIENT_ID=your_google_client_id
-  GOOGLE_REDIRECT_URI=""
+  // var params = {
+  //   "majorDimension": "ROWS",
+  //   "values": [
+  //     [sorteado]
+  //   ],
+  //   "range":"Sorteio!A1",
+  // }
 
-  const client = google.accounts.oauth2.initTokenClient({
-    client_id: 'YOUR_GOOGLE_CLIENT_ID',
-    scope: 'https://www.googleapis.com/auth/calendar.readonly',
-    callback: (response) => {
-  
-    },
+  // var xhr = new XMLHttpRequest();
+  // xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?:append');
+  // xhr.setRequestHeader("Content-Type", "text/plain")
+  // xhr.send(JSON.stringify(params));
+ 
+
+  var SCRIPT_URL = " https://script.google.com/macros/s/AKfycbygAKrW3ZSwLjl40AmXeBR1wWH7fFI7vo5lhUFiWObmiUjdS6yQkW-fjN8usYMIgec/exec";
+  $(document).ready(function() {
+      $.getJSON(SCRIPT_URL+"?callback=?",
+                {method:"record_data"},
+                function (data) { 
+                  alert(JSON.stringify(data)); 
+                  alert(sorteado)
+                });
   });
-  var k = readK()
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?:append');
-  xhr.send(JSON.stringify(params));
+  
+
 }
 
 
