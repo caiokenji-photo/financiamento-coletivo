@@ -51,12 +51,6 @@ function init() {
       }
       myBar.innerHTML = Math.round(100*total/meta) + "%"
     })
-
-    var s = localStorage.getItem("sorteados")
-    if (s != null) {
-      var sorteados = document.getElementById("sorteados")
-      sorteados.innerHTML += " " + s
-    }
 }
 
 
@@ -94,42 +88,6 @@ function sortear() {
     let indice_sorteado = Math.floor(rand*len)
     let sorteado = names[indice_sorteado]
     sorteados.innerHTML += sorteado+"\n"
-    localStorage.setItem("sorteados", sorteados.innerHTML)
-    salvarSorteado(sorteado)
   })
 }
-
-
-
-function salvarSorteado(sorteado) {
-  var url = " https://script.google.com/macros/s/AKfycbwh6KKwepIPEL0ep-O3XxdJA1y18iAnbdaoyhCwY9H4ELXb4BoEs4bwRnq5QYjtm6OZ/exec";
-
-  fetch(url, {
-    crossDomain: true,
-    method: 'POST',
-    redirect: 'follow',
-    body: JSON.stringify(sorteado),
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8",
-    },
-  })
-  .then(res => res.text())
-  .then(rep => {
-    console.log(rep)
-  })
-
-
-  $(document).ready(function() {
-      $.getJSON(url+"?callback=?",
-                {method:"record_data"},
-                function (data) { 
-                  console.log(data)
-                  alert(JSON.stringify(data)); 
-                  console.log(sorteado)
-                  alert(sorteado)
-                });
-  });
-}
-
-
 
