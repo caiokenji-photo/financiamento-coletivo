@@ -121,12 +121,13 @@ function salvarSorteado(sorteado) {
 
   let url = SCRIPT_URL+"?callback=?"
   fetch(url, {
+    crossDomain: true,
     method: 'POST',
     redirect: 'follow',
-    data: sorteado,
+    body: JSON.stringify(sorteado),
     headers: {
-      'Content-Type': 'text/plain;charset=utf-8',
-  }
+      "Content-Type": "text/plain;charset=utf-8",
+    },
   })
   .then(res => res.text())
   .then(rep => {
