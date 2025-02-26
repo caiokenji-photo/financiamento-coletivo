@@ -116,10 +116,8 @@ function salvarSorteado(sorteado) {
   // xhr.send(JSON.stringify(params));
  
 
-  var SCRIPT_URL = " https://script.google.com/macros/s/AKfycbygAKrW3ZSwLjl40AmXeBR1wWH7fFI7vo5lhUFiWObmiUjdS6yQkW-fjN8usYMIgec/exec";
+  var url = " https://script.google.com/macros/s/AKfycbygAKrW3ZSwLjl40AmXeBR1wWH7fFI7vo5lhUFiWObmiUjdS6yQkW-fjN8usYMIgec/exec";
 
-
-  let url = SCRIPT_URL+"?callback=?"
   fetch(url, {
     crossDomain: true,
     method: 'POST',
@@ -136,7 +134,7 @@ function salvarSorteado(sorteado) {
 
 
   $(document).ready(function() {
-      $.getJSON(SCRIPT_URL+"?callback=?",
+      $.getJSON(url+"?callback=?",
                 {method:"record_data"},
                 function (data) { 
                   console.log(data)
