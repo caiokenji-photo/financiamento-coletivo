@@ -121,7 +121,9 @@ function salvarSorteado(sorteado) {
       $.getJSON(SCRIPT_URL+"?callback=?",
                 {method:"record_data"},
                 function (data) { 
+                  console.log(data)
                   alert(JSON.stringify(data)); 
+                  console.log(sorteado)
                   alert(sorteado)
                 });
   });
