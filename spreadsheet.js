@@ -102,21 +102,7 @@ function sortear() {
 
 
 function salvarSorteado(sorteado) {
-  // var params = {
-  //   "majorDimension": "ROWS",
-  //   "values": [
-  //     [sorteado]
-  //   ],
-  //   "range":"Sorteio!A1",
-  // }
-
-  // var xhr = new XMLHttpRequest();
-  // xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/{' + sheetId+ '}/values/Sorteio!A1?:append');
-  // xhr.setRequestHeader("Content-Type", "text/plain")
-  // xhr.send(JSON.stringify(params));
- 
-
-  var url = " https://script.google.com/macros/s/AKfycbygAKrW3ZSwLjl40AmXeBR1wWH7fFI7vo5lhUFiWObmiUjdS6yQkW-fjN8usYMIgec/exec";
+  var url = " https://script.google.com/macros/s/AKfycbwh6KKwepIPEL0ep-O3XxdJA1y18iAnbdaoyhCwY9H4ELXb4BoEs4bwRnq5QYjtm6OZ/exec";
 
   fetch(url, {
     crossDomain: true,
@@ -143,8 +129,6 @@ function salvarSorteado(sorteado) {
                   alert(sorteado)
                 });
   });
-  
-
 }
 
 
