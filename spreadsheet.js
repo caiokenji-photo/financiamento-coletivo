@@ -118,9 +118,16 @@ function salvarSorteado(sorteado) {
 
   var SCRIPT_URL = " https://script.google.com/macros/s/AKfycbygAKrW3ZSwLjl40AmXeBR1wWH7fFI7vo5lhUFiWObmiUjdS6yQkW-fjN8usYMIgec/exec";
 
-  
-  let url = SCRIPT_URL
-  fetch(url)
+
+  let url = SCRIPT_URL+"?callback=?"
+  fetch(url, {
+    method: 'POST',
+    redirect: 'follow',
+    data: sorteado,
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8',
+  }
+  })
   .then(res => res.text())
   .then(rep => {
     console.log(rep)
