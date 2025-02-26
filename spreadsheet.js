@@ -117,6 +117,16 @@ function salvarSorteado(sorteado) {
  
 
   var SCRIPT_URL = " https://script.google.com/macros/s/AKfycbygAKrW3ZSwLjl40AmXeBR1wWH7fFI7vo5lhUFiWObmiUjdS6yQkW-fjN8usYMIgec/exec";
+
+  
+  let url = SCRIPT_URL
+  fetch(url)
+  .then(res => res.text())
+  .then(rep => {
+    console.log(rep)
+  })
+
+
   $(document).ready(function() {
       $.getJSON(SCRIPT_URL+"?callback=?",
                 {method:"record_data"},
