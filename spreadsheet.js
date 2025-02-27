@@ -49,7 +49,8 @@ function init() {
         myBar.style.width = "100vw";
         textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
       }
-      myBar.innerHTML = Math.round(100*total/meta) + "%"
+      var myProgress = document.getElementById("myProgress")
+      myProgress.innerHTML = Math.round(100*total/meta) + "%"
     })
 }
 
