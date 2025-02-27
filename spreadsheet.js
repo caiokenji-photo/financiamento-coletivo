@@ -51,9 +51,9 @@ function init() {
       }
       var myProgress = document.getElementById("myProgress")
       if (100*total/meta < 1) {
-        myProgress.innerHTML = (Math.round(100*total/meta)).toFixed(3) + "%"
+        myProgress.innerHTML = Math.round((100*total/meta).toFixed(3)) + "%"
       } else {
-          myProgress.innerHTML = (Math.round(100*total/meta)).toFixed(2) + "%"
+          myProgress.innerHTML = Math.round((100*total/meta).toFixed(2)) + "%"
       }
     })
 }
