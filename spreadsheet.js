@@ -31,7 +31,7 @@ function init() {
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
             var floatContrib = parseFloat(rowData.c[ind].v)
-            if (floatContrib != NaN) {
+            if (!isNaN(floatContrib)) {
               console.log(total + " contribuicao " + floatContrib)
               total += floatContrib
             } 
