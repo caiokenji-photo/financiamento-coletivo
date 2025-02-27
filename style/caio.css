@@ -212,11 +212,11 @@ table th {
     line-height: 4vh; 
 }
 
-.faltaX {
+#textGoal {
     font-family: sonoBold;
     color: white;
     grid-column: 1 / span 8;
-    grid-row: 24 / span 1;
+    grid-row: 30/ span 1;
 }
 
 
