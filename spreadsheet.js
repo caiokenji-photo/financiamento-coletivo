@@ -50,7 +50,7 @@ function init() {
         textGoal.innerHTML = "Meta alcançada! VALEU GALERA!"
       }
       var myProgress = document.getElementById("myProgress")
-      myProgress.innerHTML = Math.round(100*total/meta) + "%"
+      myProgress.innerHTML = (Math.round(100*total/meta)).toFixed(2) + "%"
     })
 }
 
